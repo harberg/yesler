@@ -1,0 +1,16 @@
+// Pixel to EM and Pixel to REM mixin lost from Bourbon
+// https://css-tricks.com/snippets/sass/px-to-em-functions/
+@function rem($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}rem;
+}
+@function em($pixels, $context: $browser-context) {
+    @return #{$pixels/$context}em;
+}
+
+@mixin font($size: $font-size-base, $line: $line-height-lg, $weight: $font-weight-base, $color: $brand-black, $letter: normal) {
+    font-size      : $size;
+    line-height    : $line;
+    font-weight    : $weight;
+    color          : $color;
+    letter-spacing : $letter;
+}

@@ -1,0 +1,59 @@
+// Project Specific Typography
+
+h1 {
+    @include font(rem(36), 44px);
+    &.negative {
+        color : $white;
+    }
+    @include media-breakpoint-up(sm) {
+        @include font(rem(72), 78px);
+    }
+}
+h2 {
+    @include font(rem(28), 32px);
+    &.negative {
+        color : $white;
+    }
+    @include media-breakpoint-up(sm) {
+        @include font(rem(52), 64px);
+    }
+}
+h3 {
+    @include font(rem(24), 26px);
+    &.negative {
+        color : $white;
+    }
+    @include media-breakpoint-up(sm) {
+        @include font(rem(32), 44px);
+    }
+}
+h4 {
+    @include font(rem(18), 26px);
+    @include media-breakpoint-up(sm) {
+        @include font(rem(24), 34px);
+    }
+    &.negative {
+        color : $white;
+    }
+}
+h5 {
+    @include font(rem(20), 30px);
+    &.negative {
+        color : $white;
+    }
+}
+h6 {
+    @include font(rem(18), 24px);
+    &.negative {
+        color : $white;
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+{
+  "name": "yesler",
+  "version": "1.0.0",
+  "description": "Landing Page for Yesler Developer position",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nicholas Harberg",
+  "license": "ISC",
+  "devDependencies": {
+    "globule": "^1.1.0",
+    "grunt": "^1.0.1",
+    "grunt-bower-concat": "^1.0.0",
+    "grunt-bowercopy": "^1.2.4",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "matchdep": "^1.0.1",
+    "micromatch": "^2.3.11",
+    "node-sass": "^4.4.0"
+  },
+  "dependencies": {
+    "bower": "^1.8.0"
+  }
+}

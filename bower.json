@@ -1,0 +1,21 @@
+{
+  "name": "yesler",
+  "authors": [
+    "Nick Harberg <nicholasharberg@gmail.com>"
+  ],
+  "description": "Landing Page for Yesler developer candidate",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.6"
+  }
+}
