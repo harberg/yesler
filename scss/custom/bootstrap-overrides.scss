@@ -12,9 +12,8 @@
 // Table of Contents
 // - Colors
 // - Fonts
-
-
-
+// - Buttons
+// - Forms
 
 
 // Colors
@@ -28,6 +27,10 @@ $brand-teal  : #2ab7ca;
 $brand-red   : #ff6542;
 $brand-white : #fafafa;
 
+$brand-red-hover : #ff7e61;
+
+$brand-red-active : #ff5a36;
+
 $brand-gradient : linear-gradient(236.66deg, rgba(5,92,116,0.31) 0%, #022F40 100%);
 
 // Fonts
@@ -38,31 +41,65 @@ $font-family-sans-serif: 'Open Sans', sans-serif !default;
 
 $browser-context : 16;
 
-$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
-$font-size-lg:   1.25rem !default;
-$font-size-sm:   .875rem !default;
-$font-size-xs:   .75rem !default;
+// Buttons
+//
+// For each of Bootstrap's buttons, define text, background and border color.
 
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
+.btn {
+    font-size      : rem(16);
+    text-transform : uppercase;
+    width          : rem(160);
+    height         : 60px;
+    line-height    : 60px;
+    padding        : 0;
+    cursor         : pointer;
+    &.btn-primary {
+        border : none;
+        color : $white;
+        &:hover {
+            background : $brand-red-hover;
+        }
+        &:active {
+            background : $brand-red-active;
+        }
+        &:visited {
+            color : $white;
+            border : none;
+        }
+    }
+    &.btn-secondary {
+        border : 2px solid $white;
+        color : $white;
+        &:hover {
+            background : $white;
+            color : $brand-teal;
+        }
+        &:active {
+            background : $white;
+            color : $white;
+        }
+        &:focus {
+            background : $white;
+            color : $brand-teal;
+        }
+        &:visited {
+            background : transparent;
+        }
+    }
+}
 
-$font-weight-base: $font-weight-normal !default;
-$line-height-base: 1.5 !default;
 
-$headings-margin-bottom: ($spacer / 2) !default;
-$headings-font-family:   inherit !default;
-$headings-font-weight:   500 !default;
-$headings-line-height:   1.1 !default;
-$headings-color:         inherit !default;
-
-
-
-
-
-
-
-
-
+// Forms
+form {
+    label {
+        @include font(rem(15), 24px, 400, $white);
+        margin-bottom: 0;
+    }
+    .btn {
+        margin-top: rem(40);
+        width : 100%;
+    }
+}
 
 
 

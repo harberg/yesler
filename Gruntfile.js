@@ -128,7 +128,7 @@ module.exports = function (grunt) {
                 options: {
                     livereload : true
                 },
-                files: [ "style.css", "**/*.php", "js/script.js" ],
+                files: [ "style.css", "bootstrap.scss", "**/*.php", "js/script.js", 'index.php' ],
             },
         },
     });// end grunt.initConfig

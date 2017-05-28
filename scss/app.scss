@@ -1,8 +1,195 @@
 @import "bootstrap/bootstrap.scss";
-@import "custom/bootstrap-overrides";
 @import "custom/mixins.scss";
 @import "custom/typography";
+@import "custom/bootstrap-overrides.scss";
 
 body {
-    color : blue!important;
+
 }
+
+header {
+    height : 80px;
+    background : rgba(0, 0, 0, 0.4);
+    text-align: center;
+    // visually hidden while still allowing content to be seen by assistive tech.
+    h1 {
+        padding     : 0;
+        position    : absolute;
+        border      : 0;
+        clip        : rect(1px, 1px, 1px, 1px);
+        clip-path   : circle(1% at 1% 1%);
+        height      : 1px;
+        overflow    : hidden;
+        overflow    : hidden;
+        white-space : nowrap;
+        width       : 1px;
+    }
+    svg {
+        margin-top : rem(28);
+    }
+}
+
+.homeMarquee {
+    background-image    : $brand-gradient, url(./images/design/shark@2x.png);
+    background-size     : cover;
+    background-repeat   : no-repeat;
+    background-position : center center;
+    height              : 100%;
+    min-height          : 100%;
+    min-height          : 100vh;
+    display             : flex;
+    align-items         : center;
+    margin              : 0;
+    padding             : 0;
+    text-align          : center;
+    h2 {
+        margin    : 0 auto rem(24);
+        color     : $white;
+        max-width : 620px;
+    }
+    p {
+        @include font(rem(20), 34px);
+        margin : 0 auto rem(47);
+        max-width : 789px;
+        color : $white;
+        display: block;
+    }
+    .homeMarqueeButtons {
+        width : 100%;
+    }
+    a.btn {
+        &.btn-primary {
+            width : 180px;
+            margin-right: rem(23);
+        }
+        &.btn-secondary {
+            width : 206px;
+        }
+    }
+}// end .homeMarquee
+
+.homeFeatures {
+    background : $brand-white;
+    padding : rem(113) 0 rem(92);
+    text-align: center;
+    > div {
+        display: flex;
+        justify-content : space-between;
+        flex-wrap : wrap;
+    }
+
+    h2 {
+        max-width: 882px;
+        margin : 0 auto rem(90);
+    }
+    article {
+        display: flex;
+        flex-direction : column;
+        flex: 0 1 33%;
+        max-width: rem(290);
+
+    }
+}// end .homeFeatures
+
+.homeComparison {
+    padding : rem(123) 0 rem(120);
+    text-align: center;
+    h2 {
+        margin-bottom: rem(23);
+    }
+    h5 {
+        margin-bottom: rem(115);
+    }
+    table {
+        max-width : 969px;
+        margin : 0 auto;
+        border : none;
+        &.table-striped {
+            tbody {
+                tr:nth-of-type(odd) {
+                    background : $brand-white;
+                }
+                tr:nth-of-type(even) {
+
+                }
+            }
+        }
+        th, td {
+            @include font(rem(15), 24px, 400, $brand-black);
+            width : 20%;
+            vertical-align: middle;
+            height : rem(83);
+            &:first-child {
+                width : 40%;
+                text-align: left;
+                padding-left : rem(26);
+                border-left : none;
+            }
+            &:last-child {
+                border-right : none;
+            }
+        }
+        th {
+            @include font(rem(24), 34px, 400, $brand-black);
+            border : none;
+            text-align: center;
+        }
+        td {
+            border-bottom : none;
+            border-top    : none;
+            border-color : #e6e6e6;
+        }
+    }
+}// end .homeComparison
+
+.homeForm {
+    background-image    : $brand-gradient, url(./images/design/daniel-von-appen-258076@2x.jpg);
+    background-size     : cover;
+    background-repeat   : no-repeat;
+    background-position : center center;
+    padding : rem(130) 0 rem(136);
+    > div {
+        display : flex;
+        align-items : center;
+        justify-content : space-between;
+    }
+    .homeFormTag {
+        display: flex;
+        flex-direction : column;
+        flex: 0 1 50%;
+        h2 {
+            color : $white;
+        }
+    }
+    aside {
+        display: flex;
+        flex-direction : row;
+        justify-content : flex-end;
+        flex: 0 1 50%;
+        form {
+            width : 470px;
+            max-width: 470px;
+            padding : rem(48) rem(40);
+            background : rgba(0, 0, 0, 0.2);
+        }
+
+    }
+}// end .homeForm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

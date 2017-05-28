@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="124px" height="81px" viewBox="0 0 124 81" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-125.000000, -1450.000000)" id="features" stroke-width="3.84341637">
+            <g transform="translate(0.000000, 541.000000)">
+                <g id="content" transform="translate(2.000000, 80.000000)">
+                    <g id="icon-cells" transform="translate(125.000000, 831.000000)">
+                        <rect id="Rectangle-path" stroke="#2AB7CA" x="0.213523132" y="0.212707182" width="56.4768683" height="20.9218785"></rect>
+                        <rect id="Rectangle-path" stroke="#2AB7CA" x="0.213523132" y="27.9709945" width="56.4768683" height="20.9218785"></rect>
+                        <rect id="Rectangle-path" stroke="#FF6542" fill="#FF6542" fill-rule="nonzero" x="0.213523132" y="55.7292818" width="56.4768683" height="20.9218785"></rect>
+                        <rect id="Rectangle-path" stroke="#2AB7CA" x="63.4291815" y="0.212707182" width="56.4768683" height="20.9218785"></rect>
+                        <rect id="Rectangle-path" stroke="#FF6542" fill="#FF6542" fill-rule="nonzero" x="63.4291815" y="27.9709945" width="56.4768683" height="20.9218785"></rect>
+                        <rect id="Rectangle-path" stroke="#FF6542" fill="#FF6542" fill-rule="nonzero" x="63.4291815" y="55.7292818" width="56.4768683" height="20.9218785"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
