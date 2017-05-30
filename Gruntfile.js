@@ -81,8 +81,7 @@ module.exports = function (grunt) {
             my_target: {
                 files: {
                     'js/ugly-bower.min.js' : ['js/bower.js'],
-                    'js/ugly-script.min.js' : ['js/script.js'],
-                    'js/ugly-main.min.js' : ['js/bower.js', 'js/script.js'],
+                    'js/ugly-main.min.js' : ['js/bower.js', 'js/main.js'],
                 }
             },
         },

@@ -151,9 +151,9 @@
         </footer>
 
 
-        <script src="js/bower.js"></script>
-        <script src="js/main.js"></script>
+        <!-- <script src="js/bower.js"></script> -->
+        <script src="js/ugly-main.min.js"></script>
         <!-- comment out when not using Grunt Watch -->
-        <script src="//localhost:35729/livereload.js"></script>
+        <!-- <script src="//localhost:35729/livereload.js"></script> -->
     </body>
 </html>

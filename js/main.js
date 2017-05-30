@@ -3,13 +3,11 @@
     jQuery.easing.def = "easeOutCubic";
 
     $(window).scroll(function() {
-        console.log('scrolling yo');
         var scroll = $(window).scrollTop();
         var os = $('.homeMarquee').offset().top;
         var ht = $('.homeMarquee').height();
 
         if(scroll > os + ht) {
-            console.log('bigger');
             $('#header').addClass('scrollVisible');
         } else {
             if( $('.scrollVisible').length ) {
