@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.6"
+    "bootstrap": "4.0.0-alpha.6",
+    "jquery.easing": "jquery-easing-original#^1.4.1"
   }
 }

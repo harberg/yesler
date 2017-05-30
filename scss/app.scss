@@ -8,9 +8,12 @@ body {
 }
 
 header {
-    height : 80px;
+    height     : 64px;
     background : rgba(0, 0, 0, 0.4);
-    text-align: center;
+    text-align : center;
+    div {
+        @include clearfix();
+    }
     // visually hidden while still allowing content to be seen by assistive tech.
     h1 {
         padding     : 0;
@@ -24,10 +27,59 @@ header {
         white-space : nowrap;
         width       : 1px;
     }
-    svg {
-        margin-top : rem(28);
+    a.logoLink {
+        display : inline-block;
     }
-}
+    svg {
+        margin-top : rem(16);
+    }
+    .scrollHidden {
+        display : none;
+    }
+    &.scrollVisible {
+        height     : 64px;
+        background : $white;
+        box-shadow : 0 2px 2px 0 rgba(129,129,129,0.5);
+        a.logoLink {
+            float : left;
+            #mobile-slidedown {
+                fill : $brand-black;
+            }
+        }
+        .scrollHidden {
+            float   : right;
+            display : inline-block;
+            p {
+                @include font(rem(15), 24px, 400, $brand-black);
+                margin-top   : rem(34);
+                margin-right : rem(48);
+                display      : none;
+            }
+            .btnNav {
+                height      : 48px;
+                line-height : 48px;
+                width       : 180px;
+                margin-top  : rem(8);
+            }
+        }
+    }
+    @media( $desktop-break ) {
+        height : 80px;
+        svg {
+            margin-top : rem(28);
+        }
+        &.scrollVisible {
+            height : 92px;
+            .scrollHidden {
+                float   : right;
+                display : inline-block;
+                p {
+                    display : inline-block;
+                }
+            }
+        }
+    }
+}// end header
 
 .homeMarquee {
     background-image    : $brand-gradient, url(./images/design/shark@2x.png);
@@ -40,105 +92,192 @@ header {
     display             : flex;
     align-items         : center;
     margin              : 0;
-    padding             : 0;
+    padding             : 0 rem(5);
     text-align          : center;
     h2 {
-        margin    : 0 auto rem(24);
-        color     : $white;
+        @include font(rem(36), 44px, 400, $white);
+        margin    : rem(149) auto rem(19);
         max-width : 620px;
     }
     p {
-        @include font(rem(20), 34px);
-        margin : 0 auto rem(47);
+        @include font(rem(16), 24px, 600, $white);
+        margin    : 0 auto rem(24);
         max-width : 789px;
-        color : $white;
-        display: block;
+        display   : block;
     }
     .homeMarqueeButtons {
         width : 100%;
     }
     a.btn {
         &.btn-primary {
-            width : 180px;
-            margin-right: rem(23);
+            width        : 180px;
+            margin-right : rem(23);
         }
         &.btn-secondary {
-            width : 206px;
+            display : none;
+            width   : 206px;
+        }
+    }
+    @media( $desktop-break ) {
+        padding : 0;
+        h2 {
+            margin : 0 auto rem(24);
+        }
+        p {
+            @include font(rem(20), 34px, 400, $white);
+            margin : 0 auto rem(47);
+        }
+        a.btn {
+            &.btn-secondary {
+                display: inline-block;
+            }
         }
     }
 }// end .homeMarquee
 
 .homeFeatures {
     background : $brand-white;
-    padding : rem(113) 0 rem(92);
-    text-align: center;
+    padding    : rem(76) 0 rem(67);
+    text-align : center;
     > div {
-        display: flex;
-        justify-content : space-between;
-        flex-wrap : wrap;
+        display         : flex;
+        justify-content : center;
+        flex-wrap       : wrap;
     }
-
     h2 {
-        max-width: 882px;
-        margin : 0 auto rem(90);
+        max-width : 882px;
+        margin    : 0 auto rem(56);
+    }
+    h5 {
+        margin-top : rem(17);
     }
     article {
-        display: flex;
+        display        : flex;
         flex-direction : column;
-        flex: 0 1 33%;
-        max-width: rem(290);
-
+        flex           : 0 1 100%;
+        max-width      : rem(290);
+        margin-bottom  : rem(51);
+        &:last-child {
+            margin-bottom : 0;
+        }
+        p {
+            @include font(rem(16), 30px, normal, $brand-black);
+        }
+    }
+    @media( $desktop-break ) {
+        padding : rem(113) 0 rem(92);
+        > div {
+            justify-content : space-between;
+        }
+        h2 {
+            margin : 0 auto rem(90);
+        }
+        article {
+            flex : 0 1 33%;
+        }
     }
 }// end .homeFeatures
 
 .homeComparison {
-    padding : rem(123) 0 rem(120);
-    text-align: center;
+    padding    : rem(76) 0 rem(41);
+    text-align : center;
+    div.container {
+        padding : 0;
+    }
     h2 {
-        margin-bottom: rem(23);
+        margin-bottom : rem(24);
+        padding       : 0 rem(15);
     }
     h5 {
-        margin-bottom: rem(115);
+        @include font(rem(16), 24px, normal, $brand-black);
+        margin-bottom : rem(41);
+        padding       : 0 rem(15);
     }
+    .tableContainer {
+        position : relative;
+    }
+    .gradient {
+        position            : absolute;
+        width               : 40px;
+        top                 : 0;
+        bottom              : 0;
+        right               : 0;
+        background          : linear-gradient(90deg, rgba(255,255,255,0) 0%, #C4C4C4 100%);
+        background-repeat   : no-repeat;
+        background-position : right;
+    }
+
     table {
         max-width : 969px;
-        margin : 0 auto;
-        border : none;
+        margin    : 0 auto;
+        border    : none;
         &.table-striped {
             tbody {
                 tr:nth-of-type(odd) {
                     background : $brand-white;
                 }
-                tr:nth-of-type(even) {
-
-                }
             }
         }
+        th:first-child {
+            padding-left : 8em!important;
+        }
         th, td {
-            @include font(rem(15), 24px, 400, $brand-black);
-            width : 20%;
-            vertical-align: middle;
-            height : rem(83);
+            @include font(rem(14), 24px, 400, $brand-black);
+            width          : 20%;
+            vertical-align : middle;
+            height         : rem(83);
             &:first-child {
-                width : 40%;
-                text-align: left;
-                padding-left : rem(26);
-                border-left : none;
+                width        : 40%;
+                text-align   : left;
+                padding-left : rem(21);
+                border-left  : none;
             }
             &:last-child {
                 border-right : none;
             }
         }
         th {
-            @include font(rem(24), 34px, 400, $brand-black);
-            border : none;
-            text-align: center;
+            @include font(rem(18), 26px, 400, $brand-black);
+            &:first-child {
+                border : none;
+            }
+            text-align : center;
         }
         td {
             border-bottom : none;
             border-top    : none;
-            border-color : #e6e6e6;
+            border-color  : #e6e6e6;
+            img {
+                height : rem(32);
+            }
         }
+    }// end table
+    @media( $desktop-break ) {
+        padding : rem(123) 0 rem(120);
+        h2 {
+            margin-bottom: rem(23);
+        }
+        h5 {
+            margin-bottom: rem(115);
+        }
+        .gradient {
+            display: none;
+        }
+        table {
+            th:first-child {
+                padding-left : rem(26)!important;
+            }
+            th, td {
+                @include font(rem(15), 24px, 400, $brand-black);
+                &:first-child {
+                    padding-left : rem(26);
+                }
+            }
+            th {
+                @include font(rem(24), 34px, 400, $brand-black);
+                border : none;
+            }
+        }// end table
     }
 }// end .homeComparison
 
@@ -147,32 +286,54 @@ header {
     background-size     : cover;
     background-repeat   : no-repeat;
     background-position : center center;
-    padding : rem(130) 0 rem(136);
+    padding             : rem(76) 0 rem(50);
     > div {
-        display : flex;
-        align-items : center;
-        justify-content : space-between;
+        display         : flex;
+        align-items     : center;
+        justify-content : center;
+        flex-wrap       : wrap;
     }
     .homeFormTag {
-        display: flex;
+        display        : flex;
         flex-direction : column;
-        flex: 0 1 50%;
+        flex           : 0 1 100%;
         h2 {
-            color : $white;
+            text-align    : center;
+            color         : $white;
+            margin-bottom : rem(28);
         }
     }
     aside {
-        display: flex;
-        flex-direction : row;
+        display         : flex;
+        flex-direction  : row;
         justify-content : flex-end;
-        flex: 0 1 50%;
+        flex            : 0 1 100%;
         form {
-            width : 470px;
-            max-width: 470px;
-            padding : rem(48) rem(40);
+            width      : 100%;
+            max-width  : 100%;
+            padding    : rem(48) rem(20);
             background : rgba(0, 0, 0, 0.2);
+            .btn {
+                margin-top : rem(24);
+            }
         }
-
+    }
+    @media( $desktop-break ) {
+        padding : rem(130) 0 rem(136);
+        > div {
+            justify-content : space-between;
+        }
+        .homeFormTag {
+            flex : 0 1 50%;
+        }
+        aside {
+            flex : 0 1 50%;
+            form {
+                width     : 470px;
+                max-width : 470px;
+                padding   : rem(48) rem(40);
+            }
+        }
     }
 }// end .homeForm
 

@@ -34,11 +34,17 @@ module.exports = function (grunt) {
                     'js' : 'js/bower.js',
                     'css' : 'scss/bower.css',
                 },
+                include: [
+                    'jquery',
+                    'bootstrap',
+                    'tether',
+                    'jquery.easing',
+                ],
                 dependencies: {
-
+                    'bootstrap' : ['jquery', 'tether']
                 },
                 mainFiles: {
-
+                    //'tether' : ['dist/js/tether.js']
                 },
                 exclude: [ ],
             },
@@ -128,7 +134,7 @@ module.exports = function (grunt) {
                 options: {
                     livereload : true
                 },
-                files: [ "style.css", "bootstrap.scss", "**/*.php", "js/script.js", 'index.php' ],
+                files: [ "style.css", "bootstrap.scss", "**/*.php", "js/script.js" ],
             },
         },
     });// end grunt.initConfig

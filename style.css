@@ -6115,9 +6115,13 @@ form .btn {
   width: 100%; }
 
 header {
-  height: 80px;
+  height: 64px;
   background: rgba(0, 0, 0, 0.4);
   text-align: center; }
+  header div::after {
+    display: block;
+    content: "";
+    clear: both; }
   header h1 {
     padding: 0;
     position: absolute;
@@ -6129,8 +6133,49 @@ header {
     overflow: hidden;
     white-space: nowrap;
     width: 1px; }
+  header a.logoLink {
+    display: inline-block; }
   header svg {
-    margin-top: 1.75rem; }
+    margin-top: 1rem; }
+  header .scrollHidden {
+    display: none; }
+  header.scrollVisible {
+    height: 64px;
+    background: #fff;
+    box-shadow: 0 2px 2px 0 rgba(129, 129, 129, 0.5); }
+    header.scrollVisible a.logoLink {
+      float: left; }
+      header.scrollVisible a.logoLink #mobile-slidedown {
+        fill: #022f40; }
+    header.scrollVisible .scrollHidden {
+      float: right;
+      display: inline-block; }
+      header.scrollVisible .scrollHidden p {
+        font-size: 0.9375rem;
+        line-height: 24px;
+        font-weight: 400;
+        color: #022f40;
+        letter-spacing: normal;
+        margin-top: 2.125rem;
+        margin-right: 3rem;
+        display: none; }
+      header.scrollVisible .scrollHidden .btnNav {
+        height: 48px;
+        line-height: 48px;
+        width: 180px;
+        margin-top: 0.5rem; }
+  @media (min-width: 992px) {
+    header {
+      height: 80px; }
+      header svg {
+        margin-top: 1.75rem; }
+      header.scrollVisible {
+        height: 92px; }
+        header.scrollVisible .scrollHidden {
+          float: right;
+          display: inline-block; }
+          header.scrollVisible .scrollHidden p {
+            display: inline-block; } }
 
 .homeMarquee {
   background-image: linear-gradient(236.66deg, rgba(5, 92, 116, 0.31) 0%, #022F40 100%), url(./images/design/shark@2x.png);
@@ -6143,21 +6188,24 @@ header {
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0 0.3125rem;
   text-align: center; }
   .homeMarquee h2 {
-    margin: 0 auto 1.5rem;
+    font-size: 2.25rem;
+    line-height: 44px;
+    font-weight: 400;
     color: #fff;
+    letter-spacing: normal;
+    margin: 9.3125rem auto 1.1875rem;
     max-width: 620px; }
   .homeMarquee p {
-    font-size: 1.25rem;
-    line-height: 34px;
-    font-weight: normal;
-    color: #022f40;
-    letter-spacing: normal;
-    margin: 0 auto 2.9375rem;
-    max-width: 789px;
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: 600;
     color: #fff;
+    letter-spacing: normal;
+    margin: 0 auto 1.5rem;
+    max-width: 789px;
     display: block; }
   .homeMarquee .homeMarqueeButtons {
     width: 100%; }
@@ -6165,40 +6213,97 @@ header {
     width: 180px;
     margin-right: 1.4375rem; }
   .homeMarquee a.btn.btn-secondary {
+    display: none;
     width: 206px; }
+  @media (min-width: 992px) {
+    .homeMarquee {
+      padding: 0; }
+      .homeMarquee h2 {
+        margin: 0 auto 1.5rem; }
+      .homeMarquee p {
+        font-size: 1.25rem;
+        line-height: 34px;
+        font-weight: 400;
+        color: #fff;
+        letter-spacing: normal;
+        margin: 0 auto 2.9375rem; }
+      .homeMarquee a.btn.btn-secondary {
+        display: inline-block; } }
 
 .homeFeatures {
   background: #fafafa;
-  padding: 7.0625rem 0 5.75rem;
+  padding: 4.75rem 0 4.1875rem;
   text-align: center; }
   .homeFeatures > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap; }
   .homeFeatures h2 {
     max-width: 882px;
-    margin: 0 auto 5.625rem; }
+    margin: 0 auto 3.5rem; }
+  .homeFeatures h5 {
+    margin-top: 1.0625rem; }
   .homeFeatures article {
     display: flex;
     flex-direction: column;
-    flex: 0 1 33%;
-    max-width: 18.125rem; }
+    flex: 0 1 100%;
+    max-width: 18.125rem;
+    margin-bottom: 3.1875rem; }
+    .homeFeatures article:last-child {
+      margin-bottom: 0; }
+    .homeFeatures article p {
+      font-size: 1rem;
+      line-height: 30px;
+      font-weight: normal;
+      color: #022f40;
+      letter-spacing: normal; }
+  @media (min-width: 992px) {
+    .homeFeatures {
+      padding: 7.0625rem 0 5.75rem; }
+      .homeFeatures > div {
+        justify-content: space-between; }
+      .homeFeatures h2 {
+        margin: 0 auto 5.625rem; }
+      .homeFeatures article {
+        flex: 0 1 33%; } }
 
 .homeComparison {
-  padding: 7.6875rem 0 7.5rem;
+  padding: 4.75rem 0 2.5625rem;
   text-align: center; }
+  .homeComparison div.container {
+    padding: 0; }
   .homeComparison h2 {
-    margin-bottom: 1.4375rem; }
+    margin-bottom: 1.5rem;
+    padding: 0 0.9375rem; }
   .homeComparison h5 {
-    margin-bottom: 7.1875rem; }
+    font-size: 1rem;
+    line-height: 24px;
+    font-weight: normal;
+    color: #022f40;
+    letter-spacing: normal;
+    margin-bottom: 2.5625rem;
+    padding: 0 0.9375rem; }
+  .homeComparison .tableContainer {
+    position: relative; }
+  .homeComparison .gradient {
+    position: absolute;
+    width: 40px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #C4C4C4 100%);
+    background-repeat: no-repeat;
+    background-position: right; }
   .homeComparison table {
     max-width: 969px;
     margin: 0 auto;
     border: none; }
     .homeComparison table.table-striped tbody tr:nth-of-type(odd) {
       background: #fafafa; }
+    .homeComparison table th:first-child {
+      padding-left: 8em !important; }
     .homeComparison table th, .homeComparison table td {
-      font-size: 0.9375rem;
+      font-size: 0.875rem;
       line-height: 24px;
       font-weight: 400;
       color: #022f40;
@@ -6209,46 +6314,93 @@ header {
       .homeComparison table th:first-child, .homeComparison table td:first-child {
         width: 40%;
         text-align: left;
-        padding-left: 1.625rem;
+        padding-left: 1.3125rem;
         border-left: none; }
       .homeComparison table th:last-child, .homeComparison table td:last-child {
         border-right: none; }
     .homeComparison table th {
-      font-size: 1.5rem;
-      line-height: 34px;
+      font-size: 1.125rem;
+      line-height: 26px;
       font-weight: 400;
       color: #022f40;
       letter-spacing: normal;
-      border: none;
       text-align: center; }
+      .homeComparison table th:first-child {
+        border: none; }
     .homeComparison table td {
       border-bottom: none;
       border-top: none;
       border-color: #e6e6e6; }
+      .homeComparison table td img {
+        height: 2rem; }
+  @media (min-width: 992px) {
+    .homeComparison {
+      padding: 7.6875rem 0 7.5rem; }
+      .homeComparison h2 {
+        margin-bottom: 1.4375rem; }
+      .homeComparison h5 {
+        margin-bottom: 7.1875rem; }
+      .homeComparison .gradient {
+        display: none; }
+      .homeComparison table th:first-child {
+        padding-left: 1.625rem !important; }
+      .homeComparison table th, .homeComparison table td {
+        font-size: 0.9375rem;
+        line-height: 24px;
+        font-weight: 400;
+        color: #022f40;
+        letter-spacing: normal; }
+        .homeComparison table th:first-child, .homeComparison table td:first-child {
+          padding-left: 1.625rem; }
+      .homeComparison table th {
+        font-size: 1.5rem;
+        line-height: 34px;
+        font-weight: 400;
+        color: #022f40;
+        letter-spacing: normal;
+        border: none; } }
 
 .homeForm {
   background-image: linear-gradient(236.66deg, rgba(5, 92, 116, 0.31) 0%, #022F40 100%), url(./images/design/daniel-von-appen-258076@2x.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  padding: 8.125rem 0 8.5rem; }
+  padding: 4.75rem 0 3.125rem; }
   .homeForm > div {
     display: flex;
     align-items: center;
-    justify-content: space-between; }
+    justify-content: center;
+    flex-wrap: wrap; }
   .homeForm .homeFormTag {
     display: flex;
     flex-direction: column;
-    flex: 0 1 50%; }
+    flex: 0 1 100%; }
     .homeForm .homeFormTag h2 {
-      color: #fff; }
+      text-align: center;
+      color: #fff;
+      margin-bottom: 1.75rem; }
   .homeForm aside {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    flex: 0 1 50%; }
+    flex: 0 1 100%; }
     .homeForm aside form {
-      width: 470px;
-      max-width: 470px;
-      padding: 3rem 2.5rem;
+      width: 100%;
+      max-width: 100%;
+      padding: 3rem 1.25rem;
       background: rgba(0, 0, 0, 0.2); }
+      .homeForm aside form .btn {
+        margin-top: 1.5rem; }
+  @media (min-width: 992px) {
+    .homeForm {
+      padding: 8.125rem 0 8.5rem; }
+      .homeForm > div {
+        justify-content: space-between; }
+      .homeForm .homeFormTag {
+        flex: 0 1 50%; }
+      .homeForm aside {
+        flex: 0 1 50%; }
+        .homeForm aside form {
+          width: 470px;
+          max-width: 470px;
+          padding: 3rem 2.5rem; } }

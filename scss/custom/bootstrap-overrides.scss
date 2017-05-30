@@ -14,6 +14,7 @@
 // - Fonts
 // - Buttons
 // - Forms
+// - Variables
 
 
 // Colors
@@ -101,8 +102,12 @@ form {
     }
 }
 
+// Variables
+// - Breakpoints
 
-
-
-
+$xs-mobile-break  : 'min-width : 320px';
+$mobile-break     : 'min-width : 400px';
+$tablet-break     : 'min-width : 577px';
+$desktop-break    : 'min-width : 992px';
+$fullscreen-break : 'min-width : 1200px';
 
